@@ -43,17 +43,21 @@ INSERT INTO sightings (species_id, ranger_id, location, sighting_time, notes) VA
 
 
 -- Problem 1
+
 INSERT INTO rangers (name, region) VALUES
 ('Derek Fox', 'Coastal Plains')
 
 -- Problem 2
-SELECT DISTINCT(species_id) FROM sightings as unique_species_count;
+
+SELECT count(DISTINCT species_id)FROM sightings as unique_species_count;
 
 -- Problem 3
+
 SELECT * FROM sightings
 WHERE location LIKE '%Pass%';
 
 -- Problem 4
+
 SELECT  r.name,COUNT(*) as total_sightings  FROM sightings as s
 JOIN rangers as r
 ON r.ranger_id = s.ranger_id
@@ -89,19 +93,6 @@ SELECT sighting_id,
 FROM
     sightings;
 
-
-
-
-SELECT
-    sighting_id,
-    CASE 
-        WHEN extract(HOUR FROM sighting_time) < 12 THEN 'Morning'
-        WHEN extract(HOUR FROM sighting_time) BETWEEN 12 and 16 THEN 'Afternoon' 
-        WHEN extract(HOUR from sighting_time) = 17 and extract(MINUTE FROM sighting_time) = 0 THEN 'Afternoon'
-        ELSE 'Evening'
-    END as time_of_day
-FROM sightings
-
--- Problem 8
+-- Problem 9
 
 DELETE FROM rangers r WHERE NOT EXISTS (SELECT 1 FROM sightings s WHERE s.ranger_id = r.ranger_id);
