@@ -22,3 +22,11 @@ WHERE clause ব্যবহার করা হয় ডেটা ফিল্ট
 SELECT * FROM employees
 WHERE department = 'HR';
 ```
+# How can you modify data using UPDATE statements?
+ ডেটা পল্টানো করার জন্য আমরা UPDATE স্টেটমেন্ট ব্যবহার করি। UPDATE স্টেটমেন্টের মাধ্যমে   শর্ত পূরণ করে থাকা রো গুলোর এক বা একাধিক কলামের মান পরিবর্তন করতে পারি। WHERE ক্লজে দেওয়া শর্ত অনুযায়ী যেসব  ম্যাচ করবে, সেগুলোর মান আপডেট হবে। UPDATE স্টেটমেন্ট ব্যবহার করার সময় অবশ্যই WHERE ক্লজ দিতে হবে, না হলে টেবিলের সব রো পরিবর্তিত হয়ে যাবে
+ #### উদাহরণ:
+```sql
+ UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+```
