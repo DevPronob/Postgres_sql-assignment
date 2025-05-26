@@ -30,3 +30,14 @@ WHERE department = 'HR';
 SET column1 = value1, column2 = value2, ...
 WHERE condition;
 ```
+# What is the difference between the VARCHAR and CHAR data types?
+CHAR এর সাইজ ঠিক থাকে, কিন্তু VARCHAR এর সাইজ পরিবর্তনশীল।। এটি ওপেন সোর্স এবং স্কেলেবল হওয়ায় ছোট থেকে বড় সব ধরনের অ্যাপ্লিকেশনে ব্যবহার হয়।CHAR ও VARCHAR হলো দুটি string টাইপ ডেটা। CHAR ফিক্সড দৈর্ঘ্যের ডেটা রাখে, আর VARCHAR ভ্যারিয়েবল দৈর্ঘ্যের ডেটা সংরক্ষণ করে HAR টাইপ ফিক্সড সাইজ নিয়ে কাজ করে বলে দ্রুত অ্যাক্সেস পাওয়া যায়।
+VARCHAR টাইপ ডেটা সংরক্ষণে বেশি কার্যকর যখন ইনপুটের দৈর্ঘ্য বিভিন্ন হয়।
+
+#### উদাহরণ:
+```sql
+ CREATE TABLE Users (
+    username CHAR(10),
+    email VARCHAR(50)
+);
+```
